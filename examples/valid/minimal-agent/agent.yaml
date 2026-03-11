@@ -1,0 +1,23 @@
+apiVersion: agentlib.dev/v1alpha1
+kind: Agent
+
+metadata:
+  namespace: raul
+  name: code-reviewer
+  version: 0.1.0
+  title: Code Reviewer
+  description: Reviews changes and produces actionable feedback.
+  license: MIT
+
+spec:
+  summary: Reviews pull requests with a focus on correctness and maintainability.
+  inputs:
+    - name: repository
+      description: Repository identifier under review.
+    - name: diff
+      description: Proposed code changes to analyze.
+  outputs:
+    - name: summary
+      description: High-level review outcome.
+  tools:
+    - github.get_pull_request

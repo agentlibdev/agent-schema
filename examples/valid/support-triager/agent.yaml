@@ -1,0 +1,28 @@
+apiVersion: agentlib.dev/v1alpha1
+kind: Agent
+
+metadata:
+  namespace: acme
+  name: support-triager
+  version: 0.1.0
+  title: Support Triager
+  description: Classifies inbound support tickets and recommends the next action.
+  license: Apache-2.0
+
+spec:
+  summary: Reads support issues, classifies urgency, and suggests routing.
+  inputs:
+    - name: ticket
+      description: The support request body and metadata.
+    - name: history
+      description: Prior related ticket activity.
+  outputs:
+    - name: severity
+      description: Classified urgency level.
+    - name: route
+      description: Recommended team or queue.
+    - name: summary
+      description: Human-readable triage summary.
+  tools:
+    - zendesk.get_ticket
+    - slack.post_message

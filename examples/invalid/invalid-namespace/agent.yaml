@@ -1,0 +1,12 @@
+apiVersion: agentlib.dev/v1alpha1
+kind: Agent
+
+metadata:
+  namespace: Raul
+  name: code-reviewer
+  version: 0.1.0
+  title: Code Reviewer
+  description: Reviews changes and produces actionable feedback.
+
+spec:
+  summary: Reviews pull requests with a focus on correctness and maintainability.

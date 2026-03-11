@@ -1,0 +1,4 @@
+node_modules/
+coverage/
+.worktrees/
+npm-debug.log*
