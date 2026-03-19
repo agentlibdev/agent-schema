@@ -4,6 +4,13 @@
   "private": true,
   "description": "Canonical AgentLib agent manifest schema and validation fixtures",
   "type": "module",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "default": "./src/index.js"
+    }
+  },
   "scripts": {
     "test": "node --test",
     "validate:fixtures": "node ./scripts/validate-fixtures.mjs"
